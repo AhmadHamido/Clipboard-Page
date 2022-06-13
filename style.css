@@ -90,6 +90,16 @@ p {
   margin-bottom: 1.5em;
 }
 
+.section-one-intro,
+.section-2,
+.section-two-intro,
+.section-two-image,
+.section-three-main,
+.section-5 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* buttons and links */
 
 a {
@@ -116,6 +126,7 @@ a {
   padding: 0.75em 0.5em;
   margin: 0.75em 0;
   box-shadow: 0 5px 5%;
+  font-weight: 600;
 }
 
 .btn-ios {
@@ -192,9 +203,7 @@ footer {
 }
 
 .container-header,
-.section-1,
-.section-3,
-.section-4,
+.main-content,
 .container-footer,
 .social-media-icons {
   display: grid;
@@ -262,7 +271,43 @@ Media Query
     background-image: url(images/bg-header-desktop.png);
   }
 
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
   .container {
     max-width: 100%;
+  }
+
+  .container-header,
+  .section-one-intro,
+  .section-two-intro,
+  .section-three-main,
+  .section-5 {
+    max-width: 650px;
+  }
+
+  /* buttons and links */
+
+  header .btn-ios {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  header .btn-mac {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .btn {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-size: 1rem;
   }
 }
