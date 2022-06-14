@@ -12,7 +12,6 @@ body {
 
 img {
   max-width: 100%;
-  margin: 0 auto;
 }
 
 /* ================
@@ -90,16 +89,6 @@ p {
   margin-bottom: 1.5em;
 }
 
-.section-one-intro,
-.section-2,
-.section-two-intro,
-.section-two-image,
-.section-three-main,
-.section-5 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* buttons and links */
 
 a {
@@ -171,7 +160,7 @@ header {
 }
 
 footer {
-  background: hsl(0, 11%, 95%);
+  background: hsl(195, 14%, 95%);
 }
 
 .container {
@@ -180,11 +169,11 @@ footer {
   margin: 0 auto;
 }
 
-.container-header,
-.main-content {
+.container-header {
   margin-bottom: 10em;
 }
 
+.main-content,
 .section-2 {
   margin-bottom: 6em;
 }
@@ -196,61 +185,72 @@ footer {
 
 /* grid layout */
 
-header,
-main,
-footer {
-  grid-column: 1 / -1;
-}
-
-.container-header,
+.container,
 .main-content,
-.container-footer,
+.section-three-content,
 .social-media-icons {
   display: grid;
+}
+
+header,
+main,
+footer,
+h1,
+.btn,
+.header-logo,
+.header-paragraph,
+.section-one-intro,
+.section-one-image,
+.section-one-content,
+.section-2,
+.section-two-intro,
+.section-two-image,
+.section-three-main,
+.section-three-content,
+.section-five-title,
+.section-five-paragraph {
+  grid-column: 1 / -1;
 }
 
 .container-header {
   grid-template: 1fr repeat(3, auto) / repeat(2, 1fr);
 }
 
-.header-logo,
-h1,
-.header-paragraph,
-header .btn {
-  grid-column: 1 / -1;
-}
-
 .section-1 {
   grid-template: repeat(5, auto) / repeat(2, 1fr);
-}
-
-.section-one-intro,
-.section-one-image,
-.section-one-content {
-  grid-column: 1 / -1;
 }
 
 .section-3 {
   grid-template: repeat(4, auto) / repeat(2, 1fr);
 }
 
-.section-three-main,
-.section-three-content {
-  grid-column: 1 / -1;
-}
-
-.section-three-content {
-  display: grid;
-  justify-content: center;
+.section-5 {
+  grid-template: repeat(4, auto) / repeat(2, 1fr);
 }
 
 .container-footer {
   grid-template-rows: repeat(7, auto);
 }
 
+.header-logo,
+.section-one-intro,
+.section-two-intro,
+.section-two-image,
+.section-3,
+.section-three-main,
+.section-four-image,
+.section-5,
+.footer-logo,
+.social-media-icons {
+  justify-self: center;
+}
+
+.section-5 .btn-mac {
+  grid-row: 4;
+}
+
 .social-media-icons {
   grid-template-rows: auto;
-  justify-self: center;
 }
 
 .social-media-link {
@@ -279,8 +279,22 @@ Media Query
     font-size: 2rem;
   }
 
+  .section-one-content-title,
+  .section-one-content-paragraph {
+    text-align: left;
+  }
+
+  .section-one-content-title {
+    font-size: 1.5rem;
+  }
+
+  .section-one-content-paragraph {
+    font-size: 0.95rem;
+  }
+
   .container {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1440px;
   }
 
   .container-header,
@@ -291,16 +305,92 @@ Media Query
     max-width: 650px;
   }
 
+  .container-footer,
+  .section-3,
+  .section-4 {
+    max-width: 1100px;
+  }
+
+  .section-1 {
+    grid-template: auto repeat(3, 140px) auto / repeat(2, 1fr);
+    grid-column-gap: 100px;
+  }
+
+  .section-one-image {
+    grid-column: 1;
+    grid-row: 2 / -1;
+    object-position: -25px;
+  }
+
+  .section-one-content {
+    grid-column: 2;
+    max-width: 350px;
+    margin-bottom: 0;
+    align-self: center;
+  }
+
+  .section-one-1 {
+    grid-row: 2;
+  }
+
+  .section-one-2 {
+    grid-row: 3;
+  }
+
+  .section-one-3 {
+    grid-row: 4;
+  }
+
+  .section-3 {
+    grid-template: repeat(2, auto) / repeat(3, auto);
+    grid-gap: 20px;
+  }
+
+  .section-three-content {
+    grid-row: 2;
+  }
+
+  .section-three-1 {
+    grid-column: 1;
+  }
+
+  .section-three-2 {
+    grid-column: 2;
+  }
+
+  .section-three-3 {
+    grid-column: 3;
+  }
+
+  .section-4 {
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 95px;
+    justify-self: center;
+  }
+
+  .container-footer {
+    grid-template: repeat(2, 50%) / repeat(5, auto);
+    padding: 2em 0;
+  }
+
+  .footer-logo {
+    grid-row: 1;
+  }
+
   /* buttons and links */
 
-  header .btn-ios {
+  .btn-ios {
     grid-column: 1;
     justify-self: end;
   }
 
-  header .btn-mac {
+  .btn-mac {
     grid-column: 2;
     justify-self: start;
+  }
+
+  .section-5 .btn-mac {
+    grid-row: 3;
   }
 
   .btn {
@@ -309,5 +399,43 @@ Media Query
     padding-left: 2.5em;
     padding-right: 2.5em;
     font-size: 1rem;
+  }
+
+  .contact-us,
+  .press-kit {
+    grid-row: 2;
+  }
+
+  .contact-us {
+    grid-column: 2;
+  }
+
+  .press-kit {
+    grid-column: 3;
+  }
+
+  .install-guide {
+    grid-column: 4;
+  }
+
+  .footer-logo,
+  .footer-link {
+    justify-self: start;
+  }
+
+  .footer-logo,
+  .footer-link {
+    margin: 0;
+  }
+
+  .footer-logo,
+  .social-media-icons {
+    grid-row: 1 / -1;
+  }
+
+  .social-media-icons {
+    grid-column: 5;
+    align-self: center;
+    justify-self: end;
   }
 }
